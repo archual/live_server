@@ -3,5 +3,12 @@
  */
 
 var server = require("./server");
+var router = require("./router");
+var requestHandlers = require("./requestHandlers");
 
-server.start();
+var handle = {}
+handle["/"] = requestHandlers.set_cell;
+handle["/set_cell"] = requestHandlers.set_cell;
+handle["/drop_cell"] = requestHandlers.drop_cell;
+
+server.start(router.route, handle);
