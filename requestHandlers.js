@@ -8,12 +8,10 @@ function set_cell(response) {
     console.log("Request handler 'set' was called.");
     var content = "empty";
 
-    exec("ls -lah", function (error, stdout, stderr) {
-        response.writeHead(200, {"Content-Type": "text/plain"});
-        response.write(stdout);
-        response.end();
-    });
-
+    response.writeHead(200, {"Content-Type": "text/plain"});
+    var cube = [3, 10,15,20];
+    response.write('fgd');
+    response.end();
 }
 
 function drop_cell(response) {
